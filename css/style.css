@@ -1,0 +1,79 @@
+body{
+    width:100vw;
+    font-size: 36px;
+    font-family: 'Armata', sans-serif;
+    background: url('../images/pt-2.png');
+    color: #eee;
+    text-shadow: 1px 1px 2px #000;
+}
+
+#start{
+    text-align:center;
+    width:100vw;
+   
+}
+#slide1{
+    text-align:center;
+    width:100vw;
+    
+}
+#slide2{
+    text-align:center;
+    width:100vw;
+   
+}
+
+.step{
+    text-align:center;
+    width:100vw;
+   
+}
+
+#slide7{
+    width:400px;
+}
+#slide8{
+    width:400px;
+}
+#slide9{
+    width:400px;
+}
+
+.hint_text{
+    margin-top: 120px;
+    font-size:30px;
+    background-color:#282a2f;
+    padding:15px;
+    border: 1px solid #484d52;
+    border-radius: 5px;
+    font-size: 18px;
+    
+}
+
+
+
+.fallback-message {
+    color: #eee;
+    line-height: 1.3;
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+  
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+em{
+    font-style: normal;
+    border-bottom: 1px solid #484d52;
+    padding-bottom: 2px;
+    color: #d5a830;
+}
+
