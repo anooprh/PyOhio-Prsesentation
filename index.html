@@ -229,16 +229,16 @@
 
         recognition.onstart = function () {
             recognizing = true;
-            start_img.src = '/images/mic-animate.gif';
+            start_img.src = 'images/mic-animate.gif';
         };
 
         recognition.onerror = function (event) {
             if (event.error == 'no-speech') {
-                start_img.src = '/images/mic.gif';
+                start_img.src = 'images/mic.gif';
                 ignore_onend = true;
             }
             if (event.error == 'audio-capture') {
-                start_img.src = '/images/mic.gif';
+                start_img.src = 'images/mic.gif';
                 ignore_onend = true;
             }
             if (event.error == 'not-allowed') {
@@ -251,7 +251,7 @@
             if (ignore_onend) {
                 return;
             }
-            start_img.src = '/images/mic.gif';
+            start_img.src = 'images/mic.gif';
             if (!final_transcript) {
                 showInfo('info_start');
                 return;
