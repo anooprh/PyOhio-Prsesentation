@@ -9,3 +9,4 @@ python extract_feats.py temp.wav
 python detect_animal.py -d mel_cep.data 5
 
 rm temp.wav
+rm mel_cep.data
