@@ -205,6 +205,60 @@
         <p>Why do this --> A live demo</p>
     </div>
 
+    <div id="slide27" class="step" data-x="66000" data-rotate="30">
+        <h1>Notice the pattern ?</h1>
+        <p>Example 1 : 2 voices(2 acoustic models), 1 sound (1 language model)</p>
+        <p>Example 2 : 1 voice(1 acoustic model), 2 sounds (language models)</p>
+    </div>
+
+    <div id="slide28" class="step" data-x="69000" data-rotate="30">
+        <p>What we want to recognize boils down to these two parameters</p>
+        <p>Acoustic and Language Models</p>
+        <p>In English : large number of speakers and 44 phonemes (basic sounds)</p>
+    </div>
+
+    <div id="slide29" class="step" data-x="72000" data-rotate="30">
+        <p>All recognizers have different formats and specifications</p>
+        <p>Its a mess !!</p>
+        <p>In English : large number of speakers and 44 phonemes (basic sounds)</p>
+    </div>
+
+    <div id="slide30" class="step" data-x="75000" data-rotate="30">
+        <h1>Language model example</h1>
+        <p>Finite State Grammar</p>
+        <img src="images/fsg_sample.png" alt="FSG Sample"/>
+    </div>
+
+    <div id="slide31" class="step" data-x="78000" data-rotate="30">
+        <h1>Language model example</h1>
+        <p>Finite State Grammar</p>
+        <code>
+            FSG_BEGIN <br/>
+            NUM_STATES 5 <br/>
+            START_STATE 0 <br/>
+            FINAL_STATE 4 <br/>
+            TRANSITION 0 1 0.9 ONCE <br/>
+            TRANSITION 0 0 0.01 ONCE <br/>
+            TRANSITION 1 2 0.9 UPON <br/>
+            TRANSITION 1 1 0.01 UPON <br/>
+            ... <br/>
+            ... <br/>
+            FSG_END <br/>
+        </code>
+    </div>
+
+    <div id="slide32" class="step" data-x="81000" data-rotate="30">
+        <h1>Other Challenges</h1>
+        <p>End pointing - determining where the word ends</p>
+        <p>Background noise</p>
+        <p>Puffing / breathing sound</p>
+        <p>Many more</p>
+    </div>
+
+    <div id="slide33" class="step" data-x="84000" data-rotate="30">
+        <h1>Thank you</h1>
+    </div>
+
 </div>
 
 <div class="fallback-message">
