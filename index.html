@@ -1,74 +1,327 @@
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body class="impress-not-supported">
+<head>
+    <title>Speech Recognition - Python</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="impress-not-supported">
 
+<div id="impress">
 
+    <div id="start" class="step" data-rotate="30">
+        <h1>Recognizing Speech</h1>
 
-        <div id="impress">
-            <div id="start" class="step" >
-                <p>This is my custom slide</p>
-                <p>Creating Stunning Visualizations</p>
-                <p>Impress.js </p>
-                <p class='hint_text'>Press <em>Spacebar</em> or Tab To Get Started</p>
-            </div>
+        <h1>Python & more</h1>
+        <!--<p>Impress.js </p>-->
+        <p class='hint_text'>Anoop Hallur</p>
+    </div>
 
-            <div id="slide1" class="step" data-x="-1200">
-                <p>This Slide Moves From Left To Right</p>	
-            </div>
+    <div id="slide1" class="step" data-x="1500" data-rotate="30">
+        <h1>Today's Talk</h1>
 
-            <div id="slide2" class="step" data-x="1200">
-                <p>This Slide Moves From Right To Left</p>	
-            </div>
+        <div class="list">
+            <p>What is it?</p>
 
-            <div id="slide3" class="step" data-x="2200" data-y="500">
-                <p>This Slide Moves From Right To Left and Bottom To Top</p>	
-            </div>
+            <p>Why we need?</p>
 
-            <div id="slide4" class="step" data-x="2200" data-y="-500">
-                <p>This Slide Moves Top To Bottom</p>	
-            </div>
+            <p>How do we do it?</p>
 
-            <div id="slide5" class="step" data-x="3200" data-rotate="150">
-                <p>This Slide Rotates Clockwise Around z-axis</p>	
-            </div>
+            <p>Current Practices</p>
 
-            <div id="slide6" class="step" data-x="6200" data-scale='3'>
-                <p>This Slide Scales 3 Times</p>	
-            </div>
-
-            <div id="slide7" class="step" data-x="4200" data-y='1500' data-z='1500'>
-                <p>Away</p>	
-            </div>
-
-            <div id="slide8" class="step" data-x="4900" data-y='1500' data-z='100'>
-                <p>Towards</p>	
-            </div>
-
-            <div id="slide9" class="step" data-x="5600" data-y='1500' data-z='-1500'>
-                <p>Futher Towards</p>	
-            </div>
-
-            <div id="slide10" class="step" data-x="6600" data-y='3000' data-scale='10'>
-                <p>Visualization Slide Positions</p>	
-            </div>
-
-
+            <p>More !!</p>
         </div>
+    </div>
 
-        <div class="fallback-message">
-            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    <div id="slide2" class="step" data-x="3000" data-rotate="30">
+        <h1>What is speech recognition ?</h1>
+    </div>
+
+    <div id="slide3" class="step" data-x="4500" data-rotate="30">
+        <h1>What is it ? </h1>
+
+        <p>1. Machine understands what you speak</p>
+        <img src="images/voice-recognition_illustration.jpg" alt="Voice Recognition Illustration"/>
+    </div>
+
+    <div id="slide4" class="step" data-x="6000" data-rotate="30">
+        <h1>What is it ? </h1>
+
+        <p>2. What you dont speak</p>
+        <img src="images/yelling.jpg" alt="Yelling Illustration"/>
+    </div>
+
+    <div id="slide5" class="step" data-x="7500" data-rotate="30">
+        <h1>What is it ? </h1>
+
+        <p>3. Other sounds too</p>
+        <img src="images/dogbarking.jpg" alt="Dog Barking"/>
+    </div>
+
+    <div id="slide6" class="step" data-x="9000" data-rotate="30">
+        <h1>What is it not . . </h1>
+
+        <p>Does not deal with ultrasonic wavelength</p>
+
+        <p>Only human audible sounds are under study now</p>
+    </div>
+
+    <div id="slide7" class="step" data-x="10500" data-rotate="30">
+        <h1>Why do we need it ?</h1>
+        <img src="images/siri-icon-final.jpg" alt="Siri" width="250px"/>
+
+        <p>Dont you want that in your app too ??</p>
+    </div>
+
+    <div id="slide8" class="step" data-x="12000" data-rotate="30">
+        <h1>Why do we need it ?</h1>
+
+        <p>You have recorded a large data set of radio / recordings and want to generate the transcripts of the
+            recordings (Analyze it)
+        </p>
+    </div>
+
+    <div id="slide9" class="step" data-x="13500" data-rotate="30">
+        <p>Many more applications . </p>
+    </div>
+
+    <div id="slide10" class="step" data-x="15000" data-rotate="30">
+        <h1>How do we do it ?</h1>
+    </div>
+
+    <div id="slide11" class="step" data-x="18000" data-rotate="30">
+        <h1>We want this in our app</h1>
+        <div id="div_start">
+            <button id="start_button" onclick="startButton(event)" style="display: inline-block;">
+                <img alt="Start"
+                     id="start_img"
+                     src="/images/mic.gif">
+            </button>
         </div>
+        <div id="results">
+            <span class="final" id="final_span"></span> <span class="interim" id="interim_span"></span>
+        </div>
+    </div>
+
+    <div id="slide12" class="step" data-x="21000" data-rotate="30">
+        <h1>Lets see how it works</h1>
+        <p>Pure JS</p>
+        <code>
+            window['webkitSpeechRecognition']  // enabled browser <br>
+            var recognition = new webkitSpeechRecognition(); <br>
+            recognition.onstart = function () {...}; <br>
+            recognition.onerror = function () {...}; <br>
+            recognition.onend = function () {...}; <br>
+            recognition.onresult = function () {...}; <br>
+        </code>
+    </div>
+
+    <div id="slide13" class="step" data-x="24000" data-rotate="30">
+        <h1>Whats wrong with this</h1>
+        <p>1. Works only in chrome</p>
+        <p>2. Does not work offline</p>
+        <h2>Need something better</h2>
+    </div>
+
+    <div id="slide14" class="step" data-x="27000" data-rotate="30">
+        <h1>Alternative</h1>
+        <p>You can still use google speech API, and get what you want</p>
+        <p>Use it from your server</p>
+    </div>
+
+    <div id="slide15" class="step" data-x="30000" data-rotate="30">
+        <p>Upload</p>
+        <audio controls>
+            <source src="audio/good_morning_ohio_ramya.ogg" type="audio/ogg">
+            <source src="audio/good_morning_ohio_ramya.flac" type="audio/x-flac">
+        </audio>
+        <br/>
+        <br/>
+    <code>
+        HTTP Post : www.google.com/speech-api/v2/recognize        <br/>
+        Audio Data with its format info         <br/>
+        API Key        <br/>
+    </code>
+        <a href="http://www.chromium.org/developers/how-tos/api-keys">More on API Keys</a>
+    </div>
+
+    <div id="slide16" class="step" data-x="33000" data-rotate="30">
+        <h1>Now whats the problem?</h1>
+        <p>Limits: presently 50 per day</p>
+    </div>
+
+    <div id="slide17" class="step" data-x="36000" data-rotate="30">
+        <h1>Now whats the problem?</h1>
+        <p>Did you notice ? en_US . All languages are not yet covered</p>
+    </div>
+
+    <div id="slide18" class="step" data-x="39000" data-rotate="30">
+        <h1>Consider this sound</h1>
+        <audio controls>
+            <source src="audio/dog_main.wav " type="audio/wav">
+        </audio>
+        <p>Whats should the API do ??</p>
+    </div>
+
+    <div id="slide19" class="step" data-x="42000" data-rotate="30">
+        <img src="images/facepalm.jpg" alt="Facepalm"/>
+    </div>
+
+    <div id="slide20" class="step" data-x="45000" data-rotate="30">
+        <h1>Consider a game</h1>
+        <img src="images/dog_vs_cat400px.jpg" width="400px">
+        <p>You have to find who among these two has made the sound</p>
+        <br/>
+        <div class="courtesy">Image Courtesy : Dont know whats comin (3926784260)</a> by <a rel="nofollow" class="external text" href="http://www.flickr.com/people/68877611@N00">Peretz Partensky</a> from San Francisco, USA - <a rel="nofollow" class="external text" href="http://www.flickr.com/photos/ifl/3926784260/">Don't know what's comin'</a>Uploaded by <a href="//commons.wikimedia.org/wiki/User:Russavia" title="User:Russavia">russavia</a>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a></div>
+    </div>
+
+    <div id="slide21" class="step" data-x="48000" data-rotate="30">
+        <h1>Problem?</h1>
+        <p>We have not modelled the cat and dog sounds sufficiently</p>
+    </div>
+
+    <div id="slide22" class="step" data-x="51000" data-rotate="30">
+        <p>Lets do it !!</p>
+    </div>
+
+    <div id="slide23" class="step" data-x="54000" data-rotate="30">
+        <h1>How?</h1>
+        <p>Speech is also data, can be treated similar to text data (only analogy)</p>
+        <img src="images/waveform.png" alt="Waveform"/>
+    </div>
+
+    <div id="slide24" class="step" data-x="57000" data-rotate="30">
+        <img src="images/block_diagram.png" alt="Block Diagram"/>
+    </div>
+
+    <div id="slide25" class="step" data-x="60000" data-rotate="30">
+        <p>Problem is reduced to classifier problem</p>
+        <p>Can be solved effeciently by any one of the machine learning technique</p>
+    </div>
+
+</div>
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified
+        version of this presentation.</p>
+
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<script>
+    var final_transcript = '';
+    var recognizing = false;
+    var ignore_onend;
+    var start_timestamp;
+    if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+    } else {
+        start_button.style.display = 'inline-block';
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onstart = function () {
+            recognizing = true;
+            start_img.src = '/images/mic-animate.gif';
+        };
+
+        recognition.onerror = function (event) {
+            if (event.error == 'no-speech') {
+                start_img.src = '/images/mic.gif';
+                ignore_onend = true;
+            }
+            if (event.error == 'audio-capture') {
+                start_img.src = '/images/mic.gif';
+                ignore_onend = true;
+            }
+            if (event.error == 'not-allowed') {
+                ignore_onend = true;
+            }
+        };
+
+        recognition.onend = function () {
+            recognizing = false;
+            if (ignore_onend) {
+                return;
+            }
+            start_img.src = '/images/mic.gif';
+            if (!final_transcript) {
+                showInfo('info_start');
+                return;
+            }
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+                var range = document.createRange();
+                range.selectNode(document.getElementById('final_span'));
+                window.getSelection().addRange(range);
+            }
+            if (create_email) {
+                create_email = false;
+                createEmail();
+            }
+        };
+
+        recognition.onresult = function (event) {
+            var interim_transcript = '';
+            if (typeof(event.results) == 'undefined') {
+                recognition.onend = null;
+                recognition.stop();
+                upgrade();
+                return;
+            }
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    final_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
+            }
+            final_transcript = capitalize(final_transcript);
+            final_span.innerHTML = linebreak(final_transcript);
+            interim_span.innerHTML = linebreak(interim_transcript);
+        };
+    }
+
+    function upgrade() {
+        start_button.style.visibility = 'hidden';
+        showInfo('info_upgrade');
+    }
+
+    var two_line = /\n\n/g;
+    var one_line = /\n/g;
+    function linebreak(s) {
+        return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+    }
+
+    var first_char = /\S/;
+    function capitalize(s) {
+        return s.replace(first_char, function (m) {
+            return m.toUpperCase();
+        });
+    }
 
 
-        <script type="text/javascript" src="js/impress.js"></script>
-        <script type="text/javascript">impress().init();</script>
+    function startButton(event) {
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = 'en_US';
+        recognition.start();
+        ignore_onend = false;
+        final_span.innerHTML = '';
+        interim_span.innerHTML = '';
+        start_img.src = '/images/mic-slash.gif';
+        start_timestamp = event.timeStamp;
+    }
 
 
+</script>
 
-    </body>
+<script type="text/javascript" src="js/impress.js"></script>
+<script type="text/javascript">impress().init();</script>
+
+</body>
 </html>
 
 
