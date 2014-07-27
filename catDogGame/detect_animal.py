@@ -11,7 +11,9 @@ import random
 
 NUMBER_OF_TRAINING_INSTANCES = 15
 
+#Compute DTW Distance
 def dtwdis(temp,inp):
+    # Use eclidean / mahalanobi
     dmat=scip.distance.cdist(temp,inp,'euclidean')
     m,n=numpy.shape(dmat)
     
