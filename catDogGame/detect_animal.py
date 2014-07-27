@@ -1,11 +1,8 @@
 #!/usr/bin/python
 
 import sys
-#import os
 import numpy
-#import scipy
 import scipy.spatial as scip
-#import re
 import time
 import random
 
@@ -13,13 +10,14 @@ NUMBER_OF_TRAINING_INSTANCES = 15
 
 #Compute DTW Distance
 def dtwdis(temp,inp):
-    # Use eclidean / mahalanobi
+    # Use eclidean / mahalanobis distance
     dmat=scip.distance.cdist(temp,inp,'euclidean')
     m,n=numpy.shape(dmat)
     
     dcost=numpy.ones((m+2,n+1))
     dcost=dcost+numpy.inf
 
+    # Computing Dynamic Time Warping Table. Not doing pruning for the demo.
     dcost[2,1]=dmat[0,0]
     k=3
     for j in range(2,n+1):
@@ -29,7 +27,6 @@ def dtwdis(temp,inp):
     return(dcost[m+1,n])
 
 def main(argv):
-    
     if argv[1]=='-d':
         st=time.clock()
         inpdat=numpy.loadtxt(argv[2])
@@ -53,7 +50,8 @@ def main(argv):
         print 'Animal recognised as {0}'.format(animal)
         et=time.clock()
         print '{0} seconds'.format(et-st)
-
+    
+    # Deleting -r mode for demo
 
 if __name__ == '__main__':
     main(sys.argv)
